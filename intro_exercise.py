@@ -56,5 +56,3 @@ plt.xlabel('day')         # lable the x axis
 plt.ylabel("cnt Values")  # lable the y axis
 plt.title('Counts')       # title the plot
 plt.show()                # show the plot
-   
-### plt.plot(x, y = 'cnt' column)
