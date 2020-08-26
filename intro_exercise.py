@@ -6,7 +6,7 @@ Multi-line comments are possible with triple quotes like this.
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
+import time
 
 # This data comes from the UCI ML repository:
 # https://archive.ics.uci.edu/ml/datasets/Bike+Sharing+Dataset
@@ -27,9 +27,9 @@ print(df.describe())
 # Use the examples in the jupyter notebook to help you here.
 # calculate the mean and standard deviation of the hourly data counts (the 'cnt' column)
 
-
-Meanie = df["cnt"].mean()
-print("The mean of the cnt column is ",Meanie)
+# Mean
+Mean = df["cnt"].mean()
+print("The mean of the cnt column is ",Mean)
 
 # standard deviation
 #standdeviation = statistics.stdev([2.5, 3.25, 5.5, 11.25, 11.75])
@@ -37,17 +37,22 @@ print("The mean of the cnt column is ",Meanie)
 standdeviation = df["cnt"].std()
 print("The standard deviation is ",standdeviation)
 
+
 # plot the counts ('cnt' column)
-#plot the counts by method of plot(kind='barh')
-beautiful = df["cnt"].plot(kind='box')
-print(beautiful)
+x=list(range(df["cnt"].count()))
+counts =[]
+iteration = (df["cnt"].count())  ##test to see it iterates 731 times for counts
+print(iteration)    ##print test
 
-#plt.plot(x, fib)                  # create a plot of fib vs x
-#plt.xlabel('Iteration Length')    # lable x axis
-#plt.ylabel("Fibonacci's Values")  # lable y axis
-#plt.title('Fibonacci Squence')    # title the plot
-#plt.show()                        # show the plot
+# Create a for loop from length 0 to iteration
+for i in range(0, iteration):
+      counts.append(df["cnt"][i])
 
-#from matplotlib import pyplot as plt
-#plt.plot([0,1,2,3,4])
-#plt.show()
+#pause before I can see the graph
+time.sleep(4)
+
+plt.plot(x, counts)
+plt.xlabel('Id')          # lable the x axis
+plt.ylabel("cnt Values")  # lable the y axis
+plt.title('Counts')       # title the plot
+plt.show()                # show the plot
