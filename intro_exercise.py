@@ -5,7 +5,6 @@ Multi-line comments are possible with triple quotes like this.
 # pandas is a common library for working with data in Python, we usually import it like so:
 import pandas as pd
 import matplotlib.pyplot as plt
-
 import time
 
 # This data comes from the UCI ML repository:
@@ -20,8 +19,9 @@ df = pd.read_csv("Documents\GitHub\MSDS600Week1IntroPythonExercisesUploaded\day.
 # shows a preview of the data
 df.head()
 print(df.head())
-# shows some basic stats of the data
+
 print("LINE BREAK")
+# shows some basic stats of the data
 print(df.describe())
 
 # Use the examples in the jupyter notebook to help you here.
@@ -32,8 +32,7 @@ Mean = df["cnt"].mean()
 print("The mean of the cnt column is ",Mean)
 
 # standard deviation
-#standdeviation = statistics.stdev([2.5, 3.25, 5.5, 11.25, 11.75])
-#standdeviation = df["cnt"].stdev()
+#standdeviation = statistics.stdev([2.5, 3.25, 5.5, 11.25, 11.75])  ##examples
 standdeviation = df["cnt"].std()
 print("The standard deviation is ",standdeviation)
 
@@ -42,17 +41,20 @@ print("The standard deviation is ",standdeviation)
 x=list(range(df["cnt"].count()))
 counts =[]
 iteration = (df["cnt"].count())  ##test to see it iterates 731 times for counts
-print(iteration)    ##print test
+print(iteration)                 ##print test
 
 # Create a for loop from length 0 to iteration
 for i in range(0, iteration):
       counts.append(df["cnt"][i])
 
 #pause before I can see the graph
-time.sleep(4)
+time.sleep(5)
 
-plt.plot(x, counts)
-plt.xlabel('Id')          # lable the x axis
+# using plt.scatter() to create a x,y plot
+plt.scatter(x,counts)
+plt.xlabel('day')         # lable the x axis
 plt.ylabel("cnt Values")  # lable the y axis
 plt.title('Counts')       # title the plot
 plt.show()                # show the plot
+   
+### plt.plot(x, y = 'cnt' column)
