@@ -5,7 +5,7 @@ Multi-line comments are possible with triple quotes like this.
 # pandas is a common library for working with data in Python, we usually import it like so:
 import pandas as pd
 import matplotlib.pyplot as plt
-import statistics
+
 
 
 # This data comes from the UCI ML repository:
@@ -26,7 +26,7 @@ print(df.describe())
 
 # Use the examples in the jupyter notebook to help you here.
 # calculate the mean and standard deviation of the hourly data counts (the 'cnt' column)
-  
+
 
 Meanie = df["cnt"].mean()
 print("The mean of the cnt column is ",Meanie)
@@ -38,3 +38,16 @@ standdeviation = df["cnt"].std()
 print("The standard deviation is ",standdeviation)
 
 # plot the counts ('cnt' column)
+#plot the counts by method of plot(kind='barh')
+beautiful = df["cnt"].plot(kind='box')
+print(beautiful)
+
+#plt.plot(x, fib)                  # create a plot of fib vs x
+#plt.xlabel('Iteration Length')    # lable x axis
+#plt.ylabel("Fibonacci's Values")  # lable y axis
+#plt.title('Fibonacci Squence')    # title the plot
+#plt.show()                        # show the plot
+
+#from matplotlib import pyplot as plt
+#plt.plot([0,1,2,3,4])
+#plt.show()
