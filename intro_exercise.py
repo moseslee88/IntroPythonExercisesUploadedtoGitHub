@@ -32,7 +32,7 @@ Meanie = df["cnt"].mean()
 print("The mean of the cnt column is ",Meanie)
 # standard deviation
 #standdeviation = statistics.stdev([2.5, 3.25, 5.5, 11.25, 11.75])
-     standdeviation = df["weight"].stdev()
-     print("The standard deviation is ",standdeviation)
+standdeviation = df["cnt"].stdev()
+print("The standard deviation is ",standdeviation)
 
 # plot the counts ('cnt' column)
