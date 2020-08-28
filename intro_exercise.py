@@ -48,10 +48,10 @@ for i in range(0, iteration):
       counts.append(df["cnt"][i])
 
 #pause before I can see the graph
-time.sleep(5)
+time.sleep(4)
 
 # using plt.scatter() to create a x,y plot
-plt.scatter(x,counts)
+plt.scatter(x,counts, c=counts, cmap='Spectral')  #color added
 plt.xlabel('day')         # lable the x axis
 plt.ylabel("cnt Values")  # lable the y axis
 plt.title('Counts')       # title the plot
