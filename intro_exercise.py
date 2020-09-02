@@ -48,7 +48,7 @@ for i in range(0, iteration):
       counts.append(df["cnt"][i])
 
 #pause before I can see the graph
-time.sleep(4)
+time.sleep(3)
 
 # using plt.scatter() to create a x,y plot
 plt.scatter(x,counts, c=counts, cmap='Spectral')  #color added
