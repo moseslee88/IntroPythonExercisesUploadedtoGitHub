@@ -39,11 +39,11 @@ print("The standard deviation is ",standdeviation)
 
 # plot the counts ('cnt' column)
 x=list(range(df["cnt"].count()))
-counts =[]
 iteration = (df["cnt"].count())  ##test to see it iterates 731 times for counts
 print(iteration)                 ##print test
 
 # Create a for loop from length 0 to iteration
+counts =[]   
 for i in range(0, iteration):
       counts.append(df["cnt"][i])
 
